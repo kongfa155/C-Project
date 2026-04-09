@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjectC_
+﻿namespace ProjectC_
 {
     public class CalendarItem
     {
+        public int Id { get; set; }
         public string Type { get; set; }    // "Schedule" hoặc "Expense"
         public string Content { get; set; }
         public string Description { get; set; }
         // Bạn có thể thêm các thuộc tính khác như Amount, Time...
-
+        public string TimeStart { get; set; }
+        public string TimeEnd { get; set; }
         // Cập nhật Logic Icon để hiển thị đẹp hơn
         public string Icon
         {

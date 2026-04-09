@@ -1,26 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ProjectC_.Theme;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectC_
 {
     public partial class FormAddSpend : Form
     {
+        // Các thuộc tính để truyền dữ liệu về MainForm
         public decimal Amount { get; private set; }
         public string Note { get; private set; }
         public string Type { get; private set; }
         public int CategoryId { get; private set; }
-
+        // Tạo liên kết database để lấy danh mục
         private DatabaseHelper db = new DatabaseHelper();
-        public FormAddSpend()
+        public FormAddSpend(int currentUserId)
         {
             InitializeComponent();
+            // Thiết lập form để không bị thay đổi kích thước
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.StartPosition = FormStartPosition.CenterParent;
             this.MaximizeBox = false;
@@ -29,6 +27,7 @@ namespace ProjectC_
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Validate dữ liệu đầu vào
             if (!decimal.TryParse(txtAmount.Text, out decimal amount) || amount <= 0)
             {
                 MessageBox.Show("Số tiền không hợp lệ!");
@@ -40,7 +39,7 @@ namespace ProjectC_
                 MessageBox.Show("Vui lòng chọn danh mục!");
                 return;
             }
-
+            //Lấy dữ liệu từ form và gán vào các thuộc tính để truyền về MainForm
             Amount = amount;
             Note = txtNote.Text;
             Type = cbType.SelectedItem?.ToString() ?? "Chi";
@@ -52,13 +51,22 @@ namespace ProjectC_
 
         private void FormAddSpend_Load(object sender, EventArgs e)
         {
-            // 1. Load danh sách Category từ Database vào Combobox
-            DataTable dt = db.GetCategories(); // Bạn cần viết hàm này trong DatabaseHelper
+            //Áp dụng theme khi load form
+            FormThemeHelper.ApplyInputForm(this);
+
+            // Custom riêng
+            cbType.SelectedIndex = 1; // mặc định Chi tiêu
+
+            // Làm nổi input tiền
+            txtAmount.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            txtAmount.ForeColor = ColorTranslator.FromHtml("#E67E22");
+            // Load danh sách Category từ Database vào Combobox
+            DataTable dt = db.GetCategories();
             cbCategory.DataSource = dt;
             cbCategory.DisplayMember = "Name"; // Hiển thị tên loại
             cbCategory.ValueMember = "Id";     // Giá trị ẩn là ID
 
-            // 2. Setup mặc định cho loại giao dịch
+            // Setup mặc định cho loại giao dịch là tiêu
             if (cbType.Items.Count > 0) cbType.SelectedIndex = 1;
         }
 
@@ -68,20 +76,6 @@ namespace ProjectC_
             this.Close();
         }
 
-        private void txtAmount_Leave(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtAmount.Text))
-            {
-                // Nếu người dùng nhập "50" thì tự đổi thành "50000"
-                if (long.TryParse(txtAmount.Text, out long val))
-                {
-                    // Bạn có thể tùy chỉnh: Nếu số nhập vào < 1000 thì mới nhân thêm 1000
-                    if (val < 1000 && val > 0)
-                    {
-                        txtAmount.Text = (val * 1000).ToString();
-                    }
-                }
-            }
-        }
+
     }
 }

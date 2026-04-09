@@ -31,25 +31,28 @@
             this.cboUsers = new System.Windows.Forms.ComboBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtBalance = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.txtBalance = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cboUsers
             // 
+            this.cboUsers.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cboUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUsers.FormattingEnabled = true;
             this.cboUsers.Location = new System.Drawing.Point(70, 101);
             this.cboUsers.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.cboUsers.Name = "cboUsers";
-            this.cboUsers.Size = new System.Drawing.Size(238, 53);
+            this.cboUsers.Size = new System.Drawing.Size(238, 51);
             this.cboUsers.TabIndex = 0;
+            this.cboUsers.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cboUsers_DrawItem);
             // 
             // btnLogin
             // 
@@ -80,41 +83,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tạo mới";
             // 
-            // txtName
+            // btnCreate
             // 
-            this.txtName.Location = new System.Drawing.Point(299, 83);
-            this.txtName.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(533, 50);
-            this.txtName.TabIndex = 0;
+            this.btnCreate.Location = new System.Drawing.Point(341, 317);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(248, 81);
+            this.btnCreate.TabIndex = 3;
+            this.btnCreate.Text = "Tạo mới";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // label1
+            // txtBalance
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 88);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 45);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tên người dùng";
-            // 
-            // dtpBirthday
-            // 
-            this.dtpBirthday.Location = new System.Drawing.Point(299, 237);
-            this.dtpBirthday.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.Size = new System.Drawing.Size(396, 50);
-            this.dtpBirthday.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 160);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(243, 45);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Số dư tài khoản";
+            this.txtBalance.Location = new System.Drawing.Point(299, 160);
+            this.txtBalance.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtBalance.Name = "txtBalance";
+            this.txtBalance.Size = new System.Drawing.Size(533, 50);
+            this.txtBalance.TabIndex = 5;
             // 
             // label3
             // 
@@ -126,24 +112,41 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Ngày sinh";
             // 
-            // txtBalance
+            // label2
             // 
-            this.txtBalance.Location = new System.Drawing.Point(299, 160);
-            this.txtBalance.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.txtBalance.Name = "txtBalance";
-            this.txtBalance.Size = new System.Drawing.Size(533, 50);
-            this.txtBalance.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 160);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(243, 45);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Số dư tài khoản";
             // 
-            // btnCreate
+            // dtpBirthday
             // 
-            this.btnCreate.Location = new System.Drawing.Point(341, 317);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(248, 81);
-            this.btnCreate.TabIndex = 3;
-            this.btnCreate.Text = "Tạo mới";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.dtpBirthday.Location = new System.Drawing.Point(299, 237);
+            this.dtpBirthday.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.dtpBirthday.Name = "dtpBirthday";
+            this.dtpBirthday.Size = new System.Drawing.Size(396, 50);
+            this.dtpBirthday.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 88);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(244, 45);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tên người dùng";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(299, 83);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(533, 50);
+            this.txtName.TabIndex = 0;
             // 
             // label4
             // 
@@ -169,6 +172,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

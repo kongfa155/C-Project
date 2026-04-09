@@ -36,6 +36,7 @@
             this.btnNextMonth = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboCategoryFilter = new System.Windows.Forms.ComboBox();
             this.lblBalance = new System.Windows.Forms.Label();
@@ -106,14 +107,15 @@
             this.panelCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelCalendar.Location = new System.Drawing.Point(11, 71);
+            this.panelCalendar.BackColor = System.Drawing.Color.Transparent;
+            this.panelCalendar.Location = new System.Drawing.Point(54, 71);
             this.panelCalendar.Name = "panelCalendar";
-            this.panelCalendar.Size = new System.Drawing.Size(1302, 590);
+            this.panelCalendar.Size = new System.Drawing.Size(1220, 555);
             this.panelCalendar.TabIndex = 3;
             // 
             // btnPreviousMonth
             // 
-            this.btnPreviousMonth.Location = new System.Drawing.Point(309, 8);
+            this.btnPreviousMonth.Location = new System.Drawing.Point(270, 5);
             this.btnPreviousMonth.Name = "btnPreviousMonth";
             this.btnPreviousMonth.Size = new System.Drawing.Size(96, 51);
             this.btnPreviousMonth.TabIndex = 2;
@@ -123,7 +125,7 @@
             // 
             // btnNextMonth
             // 
-            this.btnNextMonth.Location = new System.Drawing.Point(928, 14);
+            this.btnNextMonth.Location = new System.Drawing.Point(908, 5);
             this.btnNextMonth.Name = "btnNextMonth";
             this.btnNextMonth.Size = new System.Drawing.Size(96, 51);
             this.btnNextMonth.TabIndex = 1;
@@ -134,7 +136,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(602, 14);
+            this.lblDate.Location = new System.Drawing.Point(575, 10);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(112, 38);
             this.lblDate.TabIndex = 0;
@@ -142,6 +144,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblTotal);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.cboCategoryFilter);
             this.panel2.Controls.Add(this.lblBalance);
@@ -153,6 +156,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1316, 162);
             this.panel2.TabIndex = 1;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(535, 101);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(168, 38);
+            this.lblTotal.TabIndex = 6;
+            this.lblTotal.Text = "Tổng đã chi:";
             // 
             // label1
             // 
@@ -177,27 +189,27 @@
             this.lblBalance.AutoSize = true;
             this.lblBalance.Location = new System.Drawing.Point(6, 91);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(88, 38);
+            this.lblBalance.Size = new System.Drawing.Size(102, 38);
             this.lblBalance.TabIndex = 3;
-            this.lblBalance.Text = "Số dư";
+            this.lblBalance.Text = "Số dư: ";
             // 
             // lblSpend
             // 
             this.lblSpend.AutoSize = true;
             this.lblSpend.Location = new System.Drawing.Point(6, 52);
             this.lblSpend.Name = "lblSpend";
-            this.lblSpend.Size = new System.Drawing.Size(124, 38);
+            this.lblSpend.Size = new System.Drawing.Size(138, 38);
             this.lblSpend.TabIndex = 2;
-            this.lblSpend.Text = "Tổng chi";
+            this.lblSpend.Text = "Tổng chi: ";
             // 
             // lblRevenue
             // 
             this.lblRevenue.AutoSize = true;
             this.lblRevenue.Location = new System.Drawing.Point(6, 10);
             this.lblRevenue.Name = "lblRevenue";
-            this.lblRevenue.Size = new System.Drawing.Size(129, 38);
+            this.lblRevenue.Size = new System.Drawing.Size(143, 38);
             this.lblRevenue.TabIndex = 1;
-            this.lblRevenue.Text = "Tổng thu";
+            this.lblRevenue.Text = "Tổng thu: ";
             // 
             // lblMonth
             // 
@@ -236,6 +248,9 @@
             // 
             // btnToggleView
             // 
+            this.btnToggleView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnToggleView.Location = new System.Drawing.Point(189, 1);
             this.btnToggleView.Name = "btnToggleView";
             this.btnToggleView.Size = new System.Drawing.Size(360, 42);
@@ -247,9 +262,10 @@
             // lblDayChoosen
             // 
             this.lblDayChoosen.AutoSize = true;
-            this.lblDayChoosen.Location = new System.Drawing.Point(3, 5);
+            this.lblDayChoosen.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDayChoosen.Location = new System.Drawing.Point(-3, 2);
             this.lblDayChoosen.Name = "lblDayChoosen";
-            this.lblDayChoosen.Size = new System.Drawing.Size(165, 38);
+            this.lblDayChoosen.Size = new System.Drawing.Size(218, 48);
             this.lblDayChoosen.TabIndex = 0;
             this.lblDayChoosen.Text = "Day Choose";
             // 
@@ -278,9 +294,9 @@
             // 
             // btnAddSpend
             // 
-            this.btnAddSpend.Location = new System.Drawing.Point(258, 6);
+            this.btnAddSpend.Location = new System.Drawing.Point(258, 3);
             this.btnAddSpend.Name = "btnAddSpend";
-            this.btnAddSpend.Size = new System.Drawing.Size(200, 66);
+            this.btnAddSpend.Size = new System.Drawing.Size(247, 62);
             this.btnAddSpend.TabIndex = 1;
             this.btnAddSpend.Text = "Thêm chi tiêu";
             this.btnAddSpend.UseVisualStyleBackColor = true;
@@ -348,6 +364,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblDayChoosen;
         private System.Windows.Forms.Button btnToggleView;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
 

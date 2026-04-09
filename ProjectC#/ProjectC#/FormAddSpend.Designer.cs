@@ -46,9 +46,9 @@
             this.label1.Location = new System.Drawing.Point(52, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 40);
+            this.label1.Size = new System.Drawing.Size(178, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Số tiền";
+            this.label1.Text = "Số tiền (vnd)";
             // 
             // label2
             // 
@@ -76,7 +76,6 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(343, 45);
             this.txtAmount.TabIndex = 3;
-            this.txtAmount.Leave += new System.EventHandler(this.txtAmount_Leave);
             // 
             // cbType
             // 

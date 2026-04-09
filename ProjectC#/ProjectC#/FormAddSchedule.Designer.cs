@@ -46,7 +46,7 @@
             this.label1.Location = new System.Drawing.Point(40, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 30);
+            this.label1.Size = new System.Drawing.Size(125, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tiêu đề";
             // 
@@ -56,7 +56,7 @@
             this.label2.Location = new System.Drawing.Point(40, 147);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 30);
+            this.label2.Size = new System.Drawing.Size(104, 45);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mô tả";
             // 
@@ -66,7 +66,7 @@
             this.label3.Location = new System.Drawing.Point(40, 102);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 30);
+            this.label3.Size = new System.Drawing.Size(276, 45);
             this.label3.TabIndex = 2;
             this.label3.Text = "Thời gian kết thúc";
             // 
@@ -76,7 +76,7 @@
             this.label4.Location = new System.Drawing.Point(40, 52);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 30);
+            this.label4.Size = new System.Drawing.Size(269, 45);
             this.label4.TabIndex = 3;
             this.label4.Text = "Thời gian bắt đầu";
             // 
@@ -84,14 +84,14 @@
             // 
             this.txtTitle.Location = new System.Drawing.Point(246, 9);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(528, 35);
+            this.txtTitle.Size = new System.Drawing.Size(528, 49);
             this.txtTitle.TabIndex = 4;
             // 
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(246, 147);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(528, 35);
+            this.txtDescription.Size = new System.Drawing.Size(528, 49);
             this.txtDescription.TabIndex = 8;
             // 
             // btnSave
@@ -120,7 +120,7 @@
             this.dtStart.Location = new System.Drawing.Point(246, 52);
             this.dtStart.Name = "dtStart";
             this.dtStart.ShowUpDown = true;
-            this.dtStart.Size = new System.Drawing.Size(336, 35);
+            this.dtStart.Size = new System.Drawing.Size(336, 49);
             this.dtStart.TabIndex = 11;
             // 
             // dtEnd
@@ -129,12 +129,12 @@
             this.dtEnd.Location = new System.Drawing.Point(246, 102);
             this.dtEnd.Name = "dtEnd";
             this.dtEnd.ShowUpDown = true;
-            this.dtEnd.Size = new System.Drawing.Size(336, 35);
+            this.dtEnd.Size = new System.Drawing.Size(336, 49);
             this.dtEnd.TabIndex = 12;
             // 
             // FormAddSchedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 45F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 272);
             this.Controls.Add(this.dtEnd);
@@ -151,6 +151,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "FormAddSchedule";
             this.Text = "FormAddSchedule";
+            this.Load += new System.EventHandler(this.FormAddSchedule_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
